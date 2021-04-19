@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "default-servers",
+  "version": "${version}",
+  "name": "Default Servers",
+  "description": "Allows modpack developers to ship a default server file config to avoid overriding servers.dat",
+  "authors": [
+    "Draylar"
+  ],
+  "contact": {
+    "website": "curseforge.com/minecraft/default-servers",
+    "repo": "github.com/Draylar/default-servers"
+  },
+  "license": "MIT",
+  "icon": "assets/default-servers/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "draylar.defaultservers.DefaultServers"
+    ]
+  },
+  "mixins": [
+    "default-servers.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "*"
+  }
+}
