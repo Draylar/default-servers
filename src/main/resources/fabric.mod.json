@@ -19,9 +19,6 @@
       "draylar.defaultservers.DefaultServers"
     ]
   },
-  "mixins": [
-    "default-servers.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
