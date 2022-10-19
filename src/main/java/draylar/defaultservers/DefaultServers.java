@@ -9,7 +9,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ServerInfo;
-import net.minecraft.client.options.ServerList;
+import net.minecraft.client.option.ServerList;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -28,7 +28,7 @@ public class DefaultServers implements ClientModInitializer {
         if(!Files.exists(Paths.get(FabricLoader.getInstance().getGameDir().toString(), "servers.dat")))  {
             for (ServerData server : CONFIG.getServers()) {
                 ServerInfo serverInfo = new ServerInfo(server.getName(), server.getIp(), false);
-                serverInfo.setResourcePackState(server.getResourcePolicy());
+                serverInfo.setResourcePackPolicy(server.getResourcePolicy());
                 list.add(serverInfo);
             }
         }
@@ -51,7 +51,7 @@ public class DefaultServers implements ClientModInitializer {
 
                     // Checks passed, add the forced server now!
                     ServerInfo serverInfo = new ServerInfo(server.getName(), server.getIp(), false);
-                    serverInfo.setResourcePackState(server.getResourcePolicy());
+                    serverInfo.setResourcePackPolicy(server.getResourcePolicy());
                     list.add(serverInfo);
                 }
             });
