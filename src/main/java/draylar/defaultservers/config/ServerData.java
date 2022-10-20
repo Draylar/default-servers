@@ -24,19 +24,19 @@ public class ServerData {
         return ip;
     }
 
-    public ServerInfo.ResourcePackState getResourcePolicy() {
+    public ServerInfo.ResourcePackPolicy getResourcePolicy() {
         if(resources != null) {
             switch (resources) {
                 case "enabled":
-                    return ServerInfo.ResourcePackState.ENABLED;
+                    return ServerInfo.ResourcePackPolicy.ENABLED;
                 case "disabled":
-                    return ServerInfo.ResourcePackState.DISABLED;
+                    return ServerInfo.ResourcePackPolicy.DISABLED;
                 case "prompt":
-                    return ServerInfo.ResourcePackState.PROMPT;
+                    return ServerInfo.ResourcePackPolicy.PROMPT;
             }
         }
 
-        return ServerInfo.ResourcePackState.PROMPT;
+        return ServerInfo.ResourcePackPolicy.PROMPT;
     }
 
     public boolean isForced() {
